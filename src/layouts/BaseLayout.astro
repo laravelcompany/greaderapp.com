@@ -41,6 +41,7 @@ const jsonLd = {
   featureList:
     "RSS and Atom feeds, offline reading, podcasts, voice reading, OPML import and export, folders, themes",
 };
+import LeadscaptainPopup from '../components/LeadscaptainPopup.astro';
 ---
 <!doctype html>
 <html lang="en">
@@ -76,7 +77,8 @@ const jsonLd = {
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <Header />
-    <main id="main"><slot /></main>
+    <main id="main"><slot />
+  <LeadscaptainPopup /></main>
     <Footer />
   </body>
 </html>
