@@ -11,3 +11,42 @@
 .final-actions{display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap}
 .final-actions .text-link{margin-left:0}
 @media(max-width:960px){.hero-copy .play-badge-hero{margin-left:0}}
+
+/* Mobile audit fixes (2026-10-18) */
+/* Tap targets: minimum 44px on primary interactive elements. */
+.brand{min-height:44px}
+.text-link,.arrow-link{display:inline-flex;align-items:center;min-height:44px;padding-bottom:0}
+.faq-grid summary{min-height:44px;align-items:center}
+.footer-links a{display:inline-flex;align-items:center;min-height:44px}
+.nav-wrap nav a{display:inline-flex;align-items:center;min-height:44px}
+/* Mobile nav: keep links reachable instead of hiding them. */
+@media(max-width:960px){
+  .site-header{position:sticky;background:var(--green)}
+  .nav-wrap{height:auto;min-height:64px;flex-wrap:wrap;gap:12px;padding:10px 0}
+  .nav-wrap nav{display:flex;order:3;flex-basis:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;gap:8px;margin-left:0;padding-bottom:4px}
+  .nav-wrap nav a{white-space:nowrap;padding:0 10px}
+  .hero{padding-top:90px}
+}
+/* Long-form content tables scroll sideways instead of overflowing. */
+.article-body table,.entry-content table,.post-content table{display:block;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+/* Legacy template pages: minimum viable styling so they stay usable on mobile. */
+.breadcrumb-area{padding:110px 0 50px}
+ol.breadcrumb{list-style:none;display:flex;flex-wrap:wrap;gap:6px;padding:0;margin:0 0 20px;font-size:14px}
+ol.breadcrumb li+li:before{content:"/";margin-right:6px;color:var(--muted)}
+.container{width:min(1120px,calc(100% - 32px));margin:auto}
+.row{display:flex;flex-wrap:wrap;gap:24px}
+[class*="col-"]{min-width:0}
+img{max-width:100%;height:auto}
+.widget{margin-bottom:32px}
+.widget ul{list-style:none;padding:0;margin:0}
+.widget ul li{padding:6px 0}
+.widget ul li a{text-decoration:none}
+.terms,.widget .badge{display:inline-flex;align-items:center;min-height:44px;padding:4px 12px;margin:0 6px 6px 0;border:1px solid var(--line);border-radius:3px;text-decoration:none;font-size:14px}
+input.form-control,textarea.form-control{width:100%;min-height:44px;padding:8px 12px;border:1px solid var(--line);border-radius:3px;font:inherit;margin-bottom:8px}
+button.btn,button[type="submit"],.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 20px;border:1px solid var(--green);background:var(--green);color:#fff;border-radius:3px;font:inherit;cursor:pointer;text-decoration:none}
+.table,.widget table{width:100%;border-collapse:collapse;display:block;overflow-x:auto}
+.button{min-height:44px}
+.accordion-button{display:block;width:100%;text-align:left;min-height:44px;padding:10px 14px;background:#fff;border:1px solid var(--line);border-radius:3px;font:inherit;font-weight:600;cursor:pointer;margin-bottom:6px}
+.search-submit{min-width:44px;min-height:44px}
+.preloader-main{display:none}
+input[type="submit"]{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 20px;border:1px solid var(--green);background:var(--green);color:#fff;border-radius:3px;font:inherit;cursor:pointer}
