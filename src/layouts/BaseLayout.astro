@@ -7,7 +7,8 @@ const {
   description = "A fast, focused, open-source RSS reader inspired by the classic gReader workflow. No subscription, no algorithmic feed.",
   image = "/assets/brand/feature.png",
 } = Astro.props;
-const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
+const canonicalPath = Astro.url.pathname.replace(/\/index\.html$/, "/").replace(/\.html$/, "");
+const canonical = new URL(canonicalPath, Astro.site ?? Astro.url.origin);
 const origin = Astro.site ?? Astro.url.origin;
 const ogImage = new URL(image, origin);
 const jsonLd = {
