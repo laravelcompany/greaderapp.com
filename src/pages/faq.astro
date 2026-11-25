@@ -1,0 +1,29 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+const title = 'Frequently asked questions about gReader News';
+const faqs = [
+  ['Is gReader News the original gReader?', 'No. It is an independent open-source project inspired by the classic gReader workflow, not an official continuation or an endorsed product.'],
+  ['Do I need an account?', 'The local RSS app works without an account. Subscriptions, articles, reading state and settings are stored on your device.'],
+  ['Can I move my subscriptions to another reader?', 'The app supports OPML import and export. OPML transfers a list of subscriptions; it is not a promise that another reader will import your article history or reading state.'],
+  ['Does it work offline?', 'The app has local storage and offline preferences. Content must already be downloaded or cached before it can be read without a connection.'],
+  ['Does the web app contact publishers directly?', 'The browser version sends feed requests through the project server proxy. The Android app contacts publishers directly. Infrastructure logs may exist, as explained in the privacy policy.'],
+  ['Can it play podcasts or read articles aloud?', 'The app includes feed audio playback and text-to-speech. Playback still depends on the publisher providing accessible media and the voices available on your device.'],
+  ['Are native Android widgets finished?', 'Native widget behavior has not been certified by the release notes. Treat widgets as work in progress, not a reason to assume a finished feature.'],
+  ['Where can I check what changed?', 'The app source and release notes are on GitHub. A source version or release-preparation note does not by itself confirm a Google Play rollout.'],
+];
+---
+<MarketingLayout title={title} description="Answers about gReader News accounts, OPML, offline reading, privacy and supported reading features.">
+  <article class="article-page shell">
+    <header><h1>{title}</h1><p class="article-deck">What the project documents, with its limits stated.</p></header>
+    <div class="article-body">
+      <dl>{faqs.map(([question, answer]) => <div><dt><h2>{question}</h2></dt><dd><p>{answer}</p></dd></div>)}</dl>
+      <h2>Check the sources</h2>
+      <ul>
+        <li><a href="/privacy-policy.html">Privacy policy, local storage and web proxy behavior</a></li>
+        <li><a href="https://github.com/laravelcompany/app.greaderapp.com/blob/main/docs/releases/0.0.3.md">App release notes and verification cautions</a></li>
+        <li><a href="https://github.com/laravelcompany/app.greaderapp.com">App source code</a></li>
+      </ul>
+      <p><a href="/">Product overview</a> · <a href="/story.html">Project story</a> · <a href="/blog.html">Reading guides</a></p>
+    </div>
+  </article>
+</MarketingLayout>

@@ -1,0 +1,8 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+import { posts } from '../data/posts';
+const title = 'Reading guides for gReader News';
+---
+<MarketingLayout title={title} description="Sourced explanations of OPML, offline reading, feed discovery, privacy and gReader News release notes.">
+  <article class="article-page shell"><header><h1>{title}</h1><p class="article-deck">Practical explanations, linked to project documentation and standards.</p></header><div class="article-body"><ul>{posts.map(post => <li><h2><a href={`/blog/${post.slug}.html`}>{post.title}</a></h2><p>{post.answer}</p></li>)}</ul><p><a href="/faq.html">Product FAQ</a> · <a href="/">Product overview</a></p></div></article>
+</MarketingLayout>
