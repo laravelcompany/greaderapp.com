@@ -4,7 +4,7 @@ import { posts } from '../../data/posts';
 export function getStaticPaths() { return posts.map(post => ({ params: { slug: post.slug }, props: { post } })); }
 const { post } = Astro.props;
 ---
-<MarketingLayout title={`${post.title} - gReader News`} description={post.answer}>
+<MarketingLayout title={`${post.title} - gReader News`} description={post.answer} breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'Reading guides', url: '/blog' }, { name: post.title, url: `/blog/${post.slug}` }]}>
   <article class="article-page shell">
     <nav aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/blog.html">Reading guides</a> / <span aria-current="page">{post.title}</span></nav>
     <header><h1>{post.title}</h1><p class="article-lead">{post.answer}</p></header>

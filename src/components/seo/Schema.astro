@@ -1,17 +1,29 @@
 ---
 import { organization, website, product } from '../../data/entities';
-const { canonical, title, description } = Astro.props;
+const { canonical, title, description, faqs = [], breadcrumbs = [] } = Astro.props;
 const graph = [organization, website, {
-  '@type': 'WebPage',
+  '@type': faqs.length ? 'FAQPage' : 'WebPage',
   '@id': `${canonical}#page`,
   url: String(canonical),
   name: title,
   description,
+  ...(faqs.length ? { mainEntity: faqs.map(([question, answer]) => ({
+    '@type': 'Question', name: question,
+    acceptedAnswer: { '@type': 'Answer', text: answer },
+  })) } : {}),
   isPartOf: { '@id': website['@id'] },
   publisher: { '@id': organization['@id'] },
 }];
 // Software claims apply only where the product overview is visibly rendered.
 if (Astro.url.pathname === '/') graph.push(product);
+if (breadcrumbs.length) graph.push({
+  '@type': 'BreadcrumbList',
+  '@id': `${canonical}#breadcrumbs`,
+  itemListElement: breadcrumbs.map((item, index) => ({
+    '@type': 'ListItem', position: index + 1, name: item.name,
+    item: String(new URL(item.url, canonical)),
+  })),
+});
 const json = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c');
 ---
 <script type="application/ld+json" set:html={json} />

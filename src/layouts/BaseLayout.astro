@@ -7,6 +7,8 @@ const {
   title = "gReader News - A fast, open-source RSS reader",
   description = "A fast, focused, open-source RSS reader inspired by the classic gReader workflow. No subscription, no algorithmic feed.",
   image = "/assets/brand/feature.png",
+  faqs = [],
+  breadcrumbs = [],
 } = Astro.props;
 const canonicalPath = Astro.url.pathname.replace(/\/index\.html$/, "/").replace(/\.html$/, "");
 const canonical = new URL(canonicalPath, Astro.site ?? Astro.url.origin);
@@ -46,7 +48,7 @@ import LeadscaptainPopup from '../components/LeadscaptainPopup.astro';
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
-    <Schema canonical={canonical} title={title} description={description} />
+    <Schema canonical={canonical} title={title} description={description} faqs={faqs} breadcrumbs={breadcrumbs} />
     <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
