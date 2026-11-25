@@ -1,0 +1,17 @@
+---
+import { organization, website, product } from '../../data/entities';
+const { canonical, title, description } = Astro.props;
+const graph = [organization, website, {
+  '@type': 'WebPage',
+  '@id': `${canonical}#page`,
+  url: String(canonical),
+  name: title,
+  description,
+  isPartOf: { '@id': website['@id'] },
+  publisher: { '@id': organization['@id'] },
+}];
+// Software claims apply only where the product overview is visibly rendered.
+if (Astro.url.pathname === '/') graph.push(product);
+const json = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c');
+---
+<script type="application/ld+json" set:html={json} />

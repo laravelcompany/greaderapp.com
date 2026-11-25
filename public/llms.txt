@@ -1,0 +1,19 @@
+# gReader News
+
+> An independent open-source RSS reader project, not an official continuation of the original gReader.
+
+## Product and project
+
+- [Product overview](https://greaderapp.com/): visible capabilities and limitations.
+- [Project story](https://greaderapp.com/story): background and independent-project status.
+- [Product FAQ](https://greaderapp.com/faq): accounts, OPML, offline reading and privacy limits.
+- [Reading guides](https://greaderapp.com/blog): sourced explanations of reading workflows.
+- [App source](https://github.com/laravelcompany/app.greaderapp.com): implementation and release notes. Source versions do not certify store rollout or all devices.
+
+## Policies
+
+- [Privacy policy](https://greaderapp.com/privacy-policy): local data, Android requests, browser proxy and website advertising.
+- [Terms](https://greaderapp.com/terms)
+- [Cookies](https://greaderapp.com/cookies)
+
+This file is a curated index, not a promise of crawler ingestion or model citation.
