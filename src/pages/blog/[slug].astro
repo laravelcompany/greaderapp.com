@@ -7,7 +7,7 @@ const { post } = Astro.props;
 <MarketingLayout title={`${post.title} - gReader News`} description={post.answer} breadcrumbs={[{ name: 'Home', url: '/' }, { name: 'Reading guides', url: '/blog' }, { name: post.title, url: `/blog/${post.slug}` }]}>
   <article class="article-page shell">
     <nav aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/blog.html">Reading guides</a> / <span aria-current="page">{post.title}</span></nav>
-    <header><h1>{post.title}</h1><p class="article-lead">{post.answer}</p></header>
+    <header><h1>{post.title}</h1><p class="article-byline">By <a href="/reviews.html">Laravel Company editorial team</a></p><p class="article-lead">{post.answer}</p></header>
     <div class="article-body">
       {post.sections.map(([heading, text]) => <section><h2>{heading}</h2><p>{text}</p></section>)}
       <section><h2>Sources and limits</h2><ul>{post.sources.map(([title,url]) => <li><a href={url}>{title}</a></li>)}</ul><p>Project documentation describes implementation and its limits. It does not certify every publisher, device or store rollout.</p></section>

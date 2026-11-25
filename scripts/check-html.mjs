@@ -23,6 +23,8 @@ for (const file of (await files('dist')).filter(f=>f.endsWith('.html'))) {
  else errors.push(...structural);
  const isHome = name === 'index.html';
  if (html.includes('id="lc-popup-card"') !== isHome) errors.push('LeadsCaptain promotion must appear on homepage only');
+ if (name.startsWith('blog/') && !html.includes('Laravel Company editorial team')) errors.push('visible editorial credit required');
+ if (name === 'reviews.html' && /<blockquote|reviewRating|aggregateRating/.test(html)) errors.push('team directory must not fabricate testimonials or ratings');
  if(errors.length) { failures++; console.error(`${name}: ${errors.join('; ')}`); }
  checked++;
 }

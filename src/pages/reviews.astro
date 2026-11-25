@@ -1,0 +1,13 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+const team = ['Bogdan Boti', 'Stefan Bogdan', 'Jon Basildon', 'Andrei M', 'Marian P', 'Syed Hammad Ahmed'];
+---
+<MarketingLayout title="The team behind gReader News" description="Meet the Laravel Company team. This is a team directory, not customer reviews or testimonials.">
+  <article class="article-page shell">
+    <header><h1>The team behind gReader News</h1><p class="article-deck">Our reading guides are credited to the Laravel Company editorial team.</p></header>
+    <div class="article-body">
+      <section><h2>Laravel Company team</h2><p>These names are listed on the <a href="https://laravelcompany.com/team">Laravel Company team page</a>. They are shown here as team members, not as customer reviewers or individual authors of the guides.</p><ul>{team.map(name => <li>{name}</li>)}</ul></section>
+      <section><h2>About this page</h2><p>The previous reviews page contained sample testimonials. They have been removed. This directory does not claim customer endorsements, ratings or quotes.</p><p><a href="/blog.html">Read our guides</a> · <a href="/faq.html">Product FAQ</a></p></section>
+    </div>
+  </article>
+</MarketingLayout>
