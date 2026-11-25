@@ -10,5 +10,8 @@ export default defineConfig({
     format: 'file',
   },
 
-  integrations: [sitemap()]
+  integrations: [sitemap({
+    // Auth/demo utilities are not authoritative product sources.
+    filter: (url) => !/^\/(?:404|coming-soon|thank-you|forgot|login|signup|newsletter)(?:\.html)?\/?$/.test(new URL(url).pathname),
+  })]
 });
