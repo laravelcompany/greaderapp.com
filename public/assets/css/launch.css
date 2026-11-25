@@ -69,3 +69,4 @@ input[type="submit"]{display:inline-flex;align-items:center;justify-content:cent
 @media(max-width:960px){.article-page{padding-top:48px}}
 @media(max-width:620px){.article-page{padding-top:32px;padding-bottom:48px}.article-page h1{font-size:34px;line-height:1.15;margin:12px 0 18px}.article-page .article-deck,.article-page .article-lead{font-size:18px;line-height:1.55}.article-body{font-size:16px;line-height:1.6}.article-body h2{font-size:26px;margin-top:28px}.article-page header{margin-bottom:24px}}
 @media(max-width:960px){.site-header .nav-wrap{height:auto;min-height:72px}.site-header{background:var(--green)}.site-header nav{background:var(--green);width:100%;min-width:0;scrollbar-width:thin}.site-header nav a{color:rgba(255,255,255,.85)}}
+@media(max-width:960px){.site-header nav{scrollbar-width:none;-ms-overflow-style:none}.site-header nav::-webkit-scrollbar{display:none}}
