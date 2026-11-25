@@ -66,7 +66,7 @@ import LeadscaptainPopup from '../components/LeadscaptainPopup.astro';
     <a class="skip-link" href="#main">Skip to content</a>
     <Header />
     <main id="main"><slot />
-  <LeadscaptainPopup /></main>
+  {Astro.url.pathname === "/" && <LeadscaptainPopup />}</main>
     <Footer />
   </body>
 </html>

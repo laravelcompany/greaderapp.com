@@ -21,6 +21,8 @@ for (const file of (await files('dist')).filter(f=>f.endsWith('.html'))) {
   console.warn(`LEGACY OPEN ${name}: ${structural.join('; ')}`);
  }
  else errors.push(...structural);
+ const isHome = name === 'index.html';
+ if (html.includes('id="lc-popup-card"') !== isHome) errors.push('LeadsCaptain promotion must appear on homepage only');
  if(errors.length) { failures++; console.error(`${name}: ${errors.join('; ')}`); }
  checked++;
 }
