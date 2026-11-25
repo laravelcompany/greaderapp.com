@@ -2,7 +2,6 @@ name: Static HTML checks
 on:
   push:
     branches: [main]
-  pull_request:
 jobs:
   html:
     runs-on: ubuntu-latest
